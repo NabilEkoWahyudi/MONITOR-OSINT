@@ -1,0 +1,25 @@
+{
+  "name": "monitor-frontend",
+  "root": "C:\\Users\\Ahmad\\downloads\\monitor\\frontend",
+  "type": [
+    "node",
+    "vue"
+  ],
+  "description": "MONITOR OSINT v28 - Vue.js Frontend",
+  "structure": "Project: monitor-frontend (13 code files)\n\n├─ src/\n  ├─ components/\n    ├─ dashboard/\n      ├─ CallsignTracker.vue\n      ├─ GeoSearch.vue\n      ├─ GpiDashboard.vue\n      ├─ GpiLegend.vue\n      ├─ LayersControl.vue\n      ├─ LiveNews.vue\n      ├─ RegionQuickFly.vue\n      ├─ SatelliteTracker.vue\n      └─ UtcClock.vue\n    ├─ layout/\n      ├─ CoordBar.vue\n      ├─ LeftPanel.vue\n      ├─ NewsTicker.vue\n      └─ RightPanel.vue\n    ├─ map/\n      ├─ CyberCanvas.vue\n      ├─ MapControls.vue\n      └─ MapView.vue\n    └─ panels/\n      ├─ ChatPanel.vue\n      ├─ EconModal.vue\n      ├─ EconPanel.vue\n      ├─ IntelDisplay.vue\n      ├─ IntelFeed.vue\n      └─ MarketPanel.vue\n  ├─ composables/\n    ├─ useAudio.js\n    ├─ useChat.js\n    └─ useMap.js\n  ├─ data/\n    ├─ conflictZones.js\n    ├─ gpiData.js\n    ├─ militaryBases.js\n    ├─ nuclearFacilities.js\n    └─ satConfig.js\n  ├─ stores/\n    ├─ econStore.js\n    ├─ intelStore.js\n    └─ mapStore.js\n  ├─ App.vue\n  ├─ main.js\n  └─ style.css\n├─ index.html\n├─ package.json\n└─ vite.config.js",
+  "keyFiles": {
+    "package.json": "{\n  \"name\": \"monitor-frontend\",\n  \"version\": \"1.0.0\",\n  \"description\": \"MONITOR OSINT v28 - Vue.js Frontend\",\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"vite build\",\n    \"preview\": \"vite preview\"\n  },\n  \"dependencies\": [\n    \"vue\",\n    \"pinia\",\n    \"leaflet\"\n  ],\n  \"devDependencies\": [\n    \"@vitejs/plugin-vue\",\n    \"vite\"\n  ]\n}",
+    "vite.config.js": "import { defineConfig } from 'vite';\nimport vue from '@vitejs/plugin-vue';\nimport { fileURLToPath, URL } from 'node:url';\n\nexport default defineConfig({\n  plugins: [vue()],\n  resolve: {\n    alias: {\n      '@': fileURLToPath(new URL('./src', import.meta.url)),\n    },\n  },\n  server: {\n    port: 5173,\n    proxy: {\n      // Forward /api/* to backend\n      '/api': {\n        target: 'http://localhost:3001',\n        changeOrigin: true,\n      },\n    },\n  },\n});\n"
+  },
+  "dependencies": [
+    "vue",
+    "pinia",
+    "leaflet"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "createdAt": "2026-09-09T03:40:10.531Z"
+}

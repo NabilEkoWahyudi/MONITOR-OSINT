@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+dist/
+.cache/
+
+# Environment variables — DO NOT COMMIT
+.env
+.env.local
+.env.*.local
+
+# Markdown docs
+*.md
+!/README.md
+!/README.MD
+
+# Logs
+*.log
+npm-debug.log*
+
+# Chat blockchain ledger (auto-generated, can be noisy)
+backend/ledger.json
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+frontend/dist/
+frontend/.vite/
